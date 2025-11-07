@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imam Gadget Store</title>
+  <meta name="description" content="Affordable phones, phone cases, and gadgets. Order via WhatsApp quickly." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="container header">
+    <div class="brand">
+      <img src="logo.png" alt="Logo" class="logo" onerror="this.style.display='none'"/>
+      <h1 id="shopName">Imam Gadget Store</h1>
+    </div>
+    <div class="actions">
+      <input id="searchInput" type="search" placeholder="Search phones, cases, gadgets..." />
+      <button id="cartButton" class="btn">
+        🛒 Cart <span id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="container filters">
+    <select id="categoryFilter">
+      <option value="all">All Categories</option>
+    </select>
+    <select id="sortSelect">
+      <option value="featured">Sort: Featured</option>
+      <option value="price-asc">Price: Low → High</option>
+      <option value="price-desc">Price: High → Low</option>
+    </select>
+  </nav>
+
+  <main class="container">
+    <section id="productGrid" class="grid"></section>
+  </main>
+
+  <footer class="container footer">
+    <p>📍 Delivery in Nigeria | ⏰ 9am–8pm | ☎️ <span id="contactPhone">+234-801-234-5678</span></p>
+    <p>© <span id="year"></span> <span id="shopNameFooter">Imam Gadget Store</span>. All rights reserved.</p>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <aside id="cartDrawer" class="drawer">
+    <div class="drawer-header">
+      <h3>Your Cart</h3>
+      <button id="closeCart" class="icon-btn" aria-label="Close cart">✖</button>
+    </div>
+    <div id="cartItems" class="drawer-body"></div>
+    <div class="drawer-footer">
+      <div class="totals">
+        <div>Subtotal:</div>
+        <div id="subtotal">₦0</div>
+      </div>
+      <button id="checkoutBtn" class="btn primary">Checkout via WhatsApp</button>
+      <small>Cash on delivery or transfer. We will confirm stock & price in chat.</small>
+    </div>
+  </aside>
+
+  <div id="overlay" class="overlay"></div>
+
+  <script>
+    // Basic config you can edit
+    window.SHOP_CONFIG = {
+      name: "Imam Gadget Store",
+      phone: "+2348012345678", // WhatsApp number, digits only or with +
+      currency: "NGN"
+    };
+  </script>
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
